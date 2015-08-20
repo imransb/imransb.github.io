@@ -8,6 +8,15 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/c3.min.css">
+
+		<!--scripts-->
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<script src="js/c3.js"></script>
+		<script src="js/main.js"></script>
+
 	</head>
 	<body>
 	   <div class="header">
@@ -19,9 +28,36 @@
 		<div id="wrapper">
 			<div id="map"></div>
 		</div><!-- end wrapper -->
-		<!--scripts-->
-		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
-		<script src="js/main.js"></script>
+
+		<div>
+			<h2 class="text-center">Predictions</h2>
+		</div>
+<div class="row">
+			<div class="col-md-3">
+			<h3>Data Source Used</h3>
+			<div class="radio">
+	  			<label>
+	    			<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+	    			Movement From Twitter
+	  			</label>
+			</div>
+			<div class="radio disabled">
+	  			<label>
+	    			<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+	    			WorldPop Population Data
+	  		</label>
+		</div>
+		<div class="radio disabled">
+	  		<label>
+	    		<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+	    		Number of Infected Cases
+	  		</label>
+		</div>
+				
+			</div>
+			<div id="chart" class="col-md-9 c3" style="max-height: 500px; position: relative;"></div>
+
+</div>
+		
 	</body>
 </html>
