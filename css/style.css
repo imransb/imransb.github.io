@@ -1,13 +1,37 @@
 body {
 	font-family: sans-serif;
 }
+.header {
+  background-color: rgba(0,0,0,0.3);
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  line-height: 37px;
+}
+
+.header .container-fluid {
+  position: relative;
+}
+
+.header h1 {
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 1.2px;    
+  margin: 0;
+  padding: 10px 0 10px 55px;
+  text-transform: uppercase;
+}
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
 #wrapper {
-	width: 960px;
-	margin: 15px auto;
+	width: 100%;
+	margin: 0px auto;
 }
 #map {
-	height: 450px;
-	margin: 15px auto;
+	height: 350px;
+	margin: 0px auto;
 }
 .legend {
     line-height: 18px;

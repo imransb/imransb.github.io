@@ -9,7 +9,7 @@ $(document).ready(function() {
 	});
 	var last={};
 
-	L.tileLayer('http://{s}.acetate.geoiq.com/tiles/acetate/{z}/{x}/{y}.png', {attribution: 'Acetate tileset from GeoIQ'}).addTo(map);
+	L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
 
 	$.getJSON("data/map.json")
 		.done(function(data){
