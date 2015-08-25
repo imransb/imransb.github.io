@@ -5,7 +5,7 @@ $(document).ready(function() {
 		center: [12,3],
 		zoom: 5,
 		minZoom: 5,
-		maxZoom:10
+		maxZoom:5
 	});
 	var last={};
 
