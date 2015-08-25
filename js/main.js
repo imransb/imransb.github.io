@@ -161,9 +161,9 @@ function createTemporalLegend(startTimestamp){
 
    // GRAPH 
     var linecolorobj = {};
-    linecolorobj['movement'] = {'data':'#79002B','forecast':'#af6680'};
-    linecolorobj['population'] = {'data':'#ff8831','forecast':'#ffb883'};
-    linecolorobj['infected'] = {'data':'#c52f3f','forecast':'#dc828c'};
+    linecolorobj['movement'] = {'movement':'#79002B','movement forecast':'#af6680'};
+    linecolorobj['worldpop'] = {'worldpop':'#ff8831','worldpop forecast':'#ffb883'};
+    linecolorobj['previouscase'] = {'previouscase':'#c52f3f','previouscase forecast':'#dc828c'};
     //linecolorobj['all'] = {'All':'#003c81','All Forecast':'#668ab3'};
     var chart = c3.generate({
         bindto: '#chart',
@@ -173,7 +173,7 @@ function createTemporalLegend(startTimestamp){
         data: { 
         	x: 'week', 
         	colors: linecolorobj['movement'], 
-        	url: 'csv/liberianone.csv', type: 'area'},
+        	url: 'csv/movement.csv', type: 'area'},
         	legend: {show: false},
         	axis :
         	 { x : 
@@ -189,30 +189,26 @@ function createTemporalLegend(startTimestamp){
         	 	}
         	 }
     });
-    /*
-    $('.change').on('click',function() {
-        var cat = $(this).parent().attr('class');
-        $('.'+cat+ ' .change').removeClass('fa-circle');
-        $('.'+cat+ ' .change').addClass('fa-circle-o');
-        $(this).addClass('fa-circle');
-        $(this).removeClass('fa-circle-o');
-        var country = $('.country .fa-circle span').attr('id'); 
-        var inter = $('.int .fa-circle span').attr('id');
-        var csvfile = 'csv/' + country + inter + '.csv';
-        c3.generate({
+    var accuracy = {};
+    accuracy["movement"] = "100%";
+    accuracy["worldpop"] = "200%";
+    accuracy["previouscase"] = "500%";
+
+    $('#radioButtons').on('change', 'input[name=optionsRadios]:radio', function (e) {
+    var source = $(this).attr('id');
+    var csvfile = 'csv/' + source + '.csv';
+    $('.accuracy').text('Accuracy: '+accuracy[source]);
+    c3.generate({
             bindto: '#chart',
             size: { height: 500 },
             padding: { right: 35, bottom: 21, left: 70 },
             point: { show: false },
-            data: { x: 'week', colors: linecolorobj[country], url: csvfile, type: 'area'},
+            data: { x: 'week', colors: linecolorobj[source], url: csvfile, type: 'area'},
             legend: { show: false},
             axis : { x : { type : 'timeseries', tick: { fit: false, count: 2, format: "%m/%d/%y"}, height: 77}}
         });
+    console.log(linecolorobj[source]);
     });
-}
-});
-
-*/
 
 })
   
