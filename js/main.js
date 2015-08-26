@@ -190,14 +190,14 @@ function createTemporalLegend(startTimestamp){
         	 }
     });
     var accuracy = {};
-    accuracy["movement"] = "100%";
-    accuracy["worldpop"] = "200%";
-    accuracy["previouscase"] = "500%";
+    accuracy["movement"] = "16.2%";
+    accuracy["worldpop"] = "8%";
+    accuracy["previouscase"] = "22.14%";
 
     $('#radioButtons').on('change', 'input[name=optionsRadios]:radio', function (e) {
     var source = $(this).attr('id');
     var csvfile = 'csv/' + source + '.csv';
-    $('.accuracy').text('Accuracy: '+accuracy[source]);
+    $('.accuracy').text('Percentage Difference: '+accuracy[source]);
     c3.generate({
             bindto: '#chart',
             size: { height: 500 },

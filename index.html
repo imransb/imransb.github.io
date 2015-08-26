@@ -32,7 +32,7 @@
 		<div>
 			<h2 class="text-center">Predictions</h2>
 		</div>
-<div class="row" id="predictions">
+<div class="row container" id="predictions">
 			<div class="col-md-3" id="radioButtons" style="padding-left: 50px;" >
 			<h3>Data Source</h3>
 			<div class="radio">
@@ -53,10 +53,11 @@
 	    		Number of Infected Cases
 	  		</label>
 		</div>
-		<div class="accuracy">
-           			 <p>Accuracy: 100%<p>
-      			</div>
-						
+		<p>The lighter area shows the total number of cases predicted for November 2014. Model is trained in darker period using the selected data source</p>
+      	<p> Actual Number of Cases: 11,771</p>
+      	<div class="accuracy">
+           			 <p>Percentage Difference: 16.2%<p>
+      	</div>				
 			</div>
 			<div class="col-md-9">
 				<div class="c3" id="chart" style="max-height: 500px; position: relative;"></div>
@@ -64,7 +65,7 @@
 </div>
 
       
-  
-		
+      
+      <script src="../../dist/js/bootstrap.min.js"></script>		
 	</body>
 </html>
